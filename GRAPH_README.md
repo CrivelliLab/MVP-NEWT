@@ -1,6 +1,6 @@
 # GRAPH
 
-```
+```javascript
 <script > window.onload = function () {
 
 
