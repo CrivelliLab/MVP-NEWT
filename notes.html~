@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+   <head>
+
+      <title>Note Software - Notes</title>
+      <!-- <base href = "http://illiniland.web.engr.illinois.edu" /> -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'forum/css/main.css' %}">
+      <script src="https://use.fontawesome.com/72ce767f24.js"></script>
+      <link>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-theme {color:#fff !important;background-color:#4CAF50 !important}
+.w3-btn {background-color:#4CAF50;margin-bottom:4px}
+.w3-code{border-left:4px solid #4CAF50}
+.myMenu {margin-bottom:150px}
+</style>
+
+
+
+
+
+   </head>
+
+   <body class="bg-ac">
+
+
+
+
+     <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><b class=illini>Note</b><b class=land>Software</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/square/">Discharge Note <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/user/home/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/profile/">User Account</a>
+            </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="/user/recommend_course/">Saved</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+          </ul>
+	    <form action="/search/" method="POST" class="form-inline my-2 my-lg-0" >
+            {% csrf_token %}
+         
+            <input class="form-control mr-sm-2" name ="search_string" type="search" value="Patient ID" aria-label= "Search">
+            <select class ="form-control" name="search_type">
+                <option value="hadm1">hadm1</option>
+                <option value="hadm2">hadm2</option>
+    <option value="hadm3">hadm3</option>
+                <option value="hadm4">hadm4</option>
+    <option value="hadm5">hadm5 </option>
+                <option value="hadm6">hadm6 </option>
+            </select> &nbsp;&nbsp;
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+
+          <!-- NAVBAR -->
+          <br>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/square/">Unstructure Data <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active ">
+              <a class="nav-link" href="/user/home/">Structure Data</a>
+            </li>
+            <li class="nav-item active" >
+              <a class="nav-link" href="/user/profile/">Time History</a>
+            </li>
+      <li class="nav-item">
+              <a class="nav-link" href="/user/recommend_course/">More</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/logout/">More...</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </br>
+
+<div>
+<button>Get JSON data</button>
+</div>
+
+
+
+
+
+
+      <!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-collapse w3-animate-left" style="z-index:3;width:270px" id="mySidebar">
+  <div class="w3-bar w3-hide-large w3-large">
+    <a href="javascript:void(0)" onclick="w3_show_nav('menuTut')" class="w3-bar-item w3-button w3-theme w3-hover-white w3-padding-16" style="width:50%">Tutorials</a>
+    <a href="javascript:void(0)" onclick="w3_show_nav('menuRef')" class="w3-bar-item w3-button w3-theme w3-hover-white w3-padding-16" style="width:50%">References</a>
+  </div>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right w3-xlarge w3-hide-large" title="Close Menu">×</a>
+  <div id="menuTut" class="myMenu">
+  <div class="w3-container">
+    <h3>Feature List</h3>
+  </div>
+  <a class="w3-bar-item w3-button" href="/html/default.asp">Feature 1</a>
+  <a class="w3-bar-item w3-button" href="/css/default.asp">Feature 2</a>
+  <a class="w3-bar-item w3-button" href="/w3css/default.asp">Feature 3</a>
+  <a class="w3-bar-item w3-button" href="/colors/default.asp">Feature 4</a>
+  <a class="w3-bar-item w3-button" href="/js/default.asp">Feature 5</a>
+  <a class="w3-bar-item w3-button" href="/xml/default.asp">Feature 6</a>
+  <a class="w3-bar-item w3-button" href="/sql/default.asp">Feature 7</a>
+  <a class="w3-bar-item w3-button" href="/php/default.asp">Feature 8</a>
+  </div>
+  <div id="menuRef" class="myMenu" style="display:none">
+  <div class="w3-container">
+    <h3>References</h3>
+  </div>
+  <a class="w3-bar-item w3-button" href='/tags/default.asp'>HTML Tag Reference</a>
+  <a class="w3-bar-item w3-button" href='/colors/default.asp'>HTML Color Reference</a>
+  <a class="w3-bar-item w3-button" href='/cssref/default.asp'>CSS Reference</a>
+  <a class="w3-bar-item w3-button" href='/cssref/css_selectors.asp'>CSS Selector Reference</a>
+  <a class="w3-bar-item w3-button" href='/w3css/w3css_references.asp'>W3.CSS Reference</a>
+  <a class="w3-bar-item w3-button" href='/jsref/default.asp'>JavaScript Reference</a>
+  <a class="w3-bar-item w3-button" href='/php/php_ref_array.asp'>PHP Reference</a>
+  <a class="w3-bar-item w3-button" href='/sql/sql_quickref.asp'>SQL Reference</a>
+  </div>
+</div>
+
+
+
+
+      <!-- body -->
+      <div style="min-height: 100%;">
+	<div class="container pl-xs-5 pr-xs-5 pt-4 pb-4 ">
+        <div class="question-card-container float-left" style="margin-left:200px;margin-top:117px;: auto;" id="question_cards">
+          <!-- all answers -->
+          <div class="card-columns" style="column-count: 1;">
+            <!-- this should link to any useful info -->
+            <!-- {% for question in questions %}-->
+
+              
+              <div class="card">
+                <a href="/course/{{question.course.id}}/">
+                  <!-- <h5 class="card-header">{{ question.course.department.name }} {{ question.course.number }}</h5>-->
+                  <h5 class="card-header">{{ Patient ID }} {{ Admittime }}</h5>
+                </a>
+
+                <div class="card-body">
+                    <a class="card-link" href="/question/{{ question.id }}">
+                      <!-- <h5 class="card-title">{{ question.title }}</h5>-->
+                  <h5 class="card-title">{{ Patient_Notes.title }}</h5>
+                  <!-- <p class="card-text">{{ question.content }}</p>-->
+                  <p class="card-text">{{ Patient_Notes.content }}</p>
+                </a>
+              </div>
+                <div class=" card-footer text-muted">
+		  <div class="row">
+             <!--
+                  <small class="col-md-6 text-left">Asked {{ question.time|date:"Y/m/d H:i" }} by
+                    <a href="#">{{ question.user.username }}</a>
+                  </small>
+                  <small class="text-info col-md-6 text-right">{{ question.get_number_answers }} Answers</small>
+                  -->
+	       </div>
+              </div>
+              </div>  <!-- end of card -->            
+            {% endfor %}
+
+          </div> <!-- end of card column -->
+
+        </div>
+	</div>
+	</div><!-- end for card -->
+
+
+
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   </body>
+
+
+<script type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+
+</html>

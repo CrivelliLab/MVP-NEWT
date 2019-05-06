@@ -1,0 +1,25 @@
+<html>
+<head>
+<title> Cohort App</title>
+<!-- add the JQuery and newt.js to create a login bar-->
+<script src="https://newt.nersc.gov/js/jquery-1.7.2.js"></script>
+<script src="https://newt.nersc.gov/js/newt.js"></script>
+<!-- Login Bar -->
+<script type="text/javascript">
+$.newt_ajax({type: "GET",
+             url: "/login",    
+             success: function(res){
+                 // res is { username: 'xxxxx', auth: true|false }
+                $("#auth").html("Login Status: "+res.auth);
+             },});
+</script>
+<!-- Bootstrap Style -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'forum/css/main.css' %}">
+</head>
+<!-- Webpage Body -->
+<body>
+    
+</body>
+</html>
+

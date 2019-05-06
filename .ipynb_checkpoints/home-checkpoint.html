@@ -1,0 +1,181 @@
+<html>
+    
+<head>
+<title>MVP-LBNL:Home</title>
+<!--css file for adding structure -->
+<style type="text/css">
+      .question {
+  font-size: 2;
+  text-align: center; }
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .card-container .card {
+    width: 30em;
+    height: 50em;
+    margin: 3em;
+    padding: 0.8em;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.5em 0em #333;
+    cursor: pointer; }
+
+.button1 {
+  display: inline-block;
+ margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: 1px;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button1:hover {background-color: #3e8e41}
+
+.button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input.MyButton {
+width: 300px;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+background: #3366cc;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+}
+input.MyButton:hover {
+color: #ffff00;
+background: #000;
+border: 1px solid #fff;
+}
+
+</style>    
+
+
+<!-- Bootstrap Style -->
+<!--new add css for question cards-->
+<link rel="stylesheet" type="text/css" href="https://glosscss.com/gloss/matte.css"/>
+<link rel="stylesheet" type="text/css" href="questioncards.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://use.fontawesome.com/72ce767f24.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+<!-- add the JQuery and newt.js to create a login bar-->
+<script src="https://newt.nersc.gov/js/jquery-1.7.2.js"></script>
+<script src="https://newt.nersc.gov/js/newt.js"></script>
+    
+<!-- Script -->
+<script type="text/javascript">
+$.newt_ajax({url: "/login",
+             type: "GET",
+             success: function(res){
+                if (!res.auth){
+                    window.location.href = "https://portal.nersc.gov/project/m1532/MVP-NEWT/index.html";
+                } else {$("#home-page").show()}
+             },});
+</script> 
+</head>
+    
+<!-- Webpage Body -->
+<body class="bg-ac">
+    
+<div id="home-page" style="display:none"> 
+    
+<nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light w3-animate-top">
+<a class="navbar-brand" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/">
+    <b class=illini>MVP@LBNL: </b><b class=land>Home</b></a>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/">Home</a></li>
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/faqs.html">FAQs</a></li>
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/about.html">About</a>
+</li></ul></div>
+</nav>
+
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">Separated link</a>
+</div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Electronic Health Record Applications</h1>
+      <p class="lead">These are the current applications developed by our team to analyze EHR data.</p>
+    </div>
+    
+<div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Define New Cohort</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">APP <small class="text-muted"> Descr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Description Goes Here.</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary"
+                    onclick="window.location.href='https://portal.nersc.gov/project/m1532/MVP-NEWT/unstructured_app/index.html'">
+                    Get Started</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Visualize Structured Data</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">APP <small class="text-muted"> Descr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Description Goes Here.</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary"
+                    onclick="window.location.href='https://portal.nersc.gov/project/m1532/MVP-NEWT/structured_app/index.html'">
+                    Get Started</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Visualize Unstructured Data</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">APP <small class="text-muted"> Descr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Description Goes Here.</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary" 
+                    onclick="window.location.href='https://portal.nersc.gov/project/m1532/MVP-NEWT/unstructured_app/index.html'">
+                    Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">© 2019</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+     
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+    
+<head>
+<title>MVP-LBNL</title>
+        
+<!-- Bootstrap Style -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://use.fontawesome.com/72ce767f24.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+<!-- add the JQuery and newt.js to create a login bar-->
+<script src="https://newt.nersc.gov/js/jquery-1.7.2.js"></script>
+<script src="https://newt.nersc.gov/js/newt.js"></script>
+    
+<!-- Script -->
+<script type="text/javascript">
+
+$.newt_ajax({url: "/login",
+             type: "GET",
+             success: function(res){
+                if (res.auth){
+                    window.location.href = "https://portal.nersc.gov/project/m1532/MVP-NEWT/home.html";
+                } else {$("#login-page").show()}
+             },});   
+</script> 
+            
+<style>
+    #signin{margin-right:400px; margin-left:400px}
+</style>
+</head>
+    
+<!-- Webpage Body -->
+<body class="bg-ac text-center">
+
+    
+<div id="login-page" style="display:none">
+    
+    
+<!-- TOP NAVBAR -->
+<nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light w3-animate-top">
+<a class="navbar-brand" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/">
+    <b class=illini>MVP@LBNL </b> </a>
+    
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/">Home</a></li>
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/faqs.html">FAQs</a></li>
+<li class="nav-item "><a class="nav-link" href="https://portal.nersc.gov/project/m1532/MVP-NEWT/about.html">About</a>
+</li></ul></div>
+</nav>
+
+<div class="form-signin" id="signin">
+<h1 class="h3 mb-2 font-weight-bold">Welcome</h1>
+<label for="inputEmail" class="sr-only">NERSC Username</label>
+<input type="text" id="inputEmail" class="form-control" placeholder="NERSC Username" required="" autofocus="">
+<label for="inputPassword" class="sr-only">Password</label>
+<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+<label for="inputMFAToken" class="sr-only">MFAToken</label>
+<input type="password" id="inputMFAToken" class="form-control" placeholder="MFA token (if available)" required="">
+<button class="btn btn-lg btn-primary btn-block" type="submit" id="btn-signin">Sign in</button>
+<script>
+$(function(){
+    $('#btn-signin').click(function() {
+        $.newt_ajax({url: "/login",
+                     type: "POST",
+                     data: {"username": $("#inputEmail").val(), 
+                            "password": $("#inputPassword").val() + $("#inputMFAToken").val()},
+                     success: function(res){
+                         if (res.auth){
+                             window.location.href = "https://portal.nersc.gov/project/m1532/MVP-NEWT/";
+                         }else{alert("USERNAME OR PASSWORD INCORRECT.");}
+                     }});
+       
+    });
+});
+</script>
+</div>	
+    
+</div></body></html>

@@ -1,4 +1,4 @@
-!--{% load static %}-->
+<!--{% load static %}-->
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,13 +10,6 @@
       <script src="https://newt.nersc.gov/js/jquery-1.7.2.js"></script>
 <script src="https://newt.nersc.gov/js/newt.js"></script>
 <script type="text/javascript">
-$.newt_ajax({type: "GET",
-    url: "/login",    
-    success: function(res){
-        // res is { username: 'xxxxx', auth: true|false }
-        $("#auth").html("Login Status: "+res.auth);
-    },
-});
 </script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" href="{% static 'forum/css/main.css' %}">
@@ -27,7 +20,7 @@ $.newt_ajax({type: "GET",
     <!-- the below is navbar and href represent the backend api  -->
      <!-- NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: rgba(0,0,255,0.3)">
-        <a class="navbar-brand" style="background-color: rgba(0,0,255,0.3)" href="#"><b class=illini>NoteSoftware</b><b class=land></b></a>
+        <a class="navbar-brand" style="background-color: rgba(0,0,255,0.3)" href="#"><b class=NoteSoftware>NoteSoftware</b><b class=mvp></b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,9 +30,6 @@ $.newt_ajax({type: "GET",
             <li class="nav-item active">
               <a class="nav-link" href="/user/home/">Home <span class="sr-only">(current)</span></a>
             </li>
-<!--             <li class="nav-item">
-              <a class="nav-link" href="/square/">Square</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="/login/">Sign In / Register</a>
             </li>
@@ -48,41 +38,21 @@ $.newt_ajax({type: "GET",
       </nav>
 
       <!-- body -->
-      <br>
-      <div class="main-container center">
-        <div class="container">
-          <div class="row text-center justify-content-center section-intro">
-            <div class="col-12 col-md-10 col-lg-8 center" style="background-color: rgba(220, 220, 220, 0.65)">
-              <h1 class="display-3"><b class=illini>Note Software</b><b class=land></b></h1>
-              <span class="lead">
-                Helping Doctor get better Idea of Medical Notes.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-         </br>
-      <br>
-        <div class="main-container center">
-        <div class="container">
-          <div class="row text-center justify-content-center section-intro">
-	    <form action="/search/" method="POST" class="form-inline my-2 my-lg-0" >
-            {% csrf_token %}
-         
-            <input class="form-control mr-sm-2" name ="search_string" type="search" value="Patient ID" aria-label= "Search">
-            <select class ="form-control" name="search_type">
-                <option value="hadm1">hadm1</option>
-                <option value="hadm2">hadm2</option>
-		<option value="hadm3">hadm3</option>
-                <option value="hadm4">hadm4</option>
-		<option value="hadm5">hadm5 </option>
-                <option value="hadm6">hadm6 </option>
-            </select> &nbsp;&nbsp;
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-	    </div>
-	  </div>
-	</div>
-	</br>
+      <br>     
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </br>
 
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

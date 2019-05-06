@@ -1,0 +1,147 @@
+<html>
+<head>
+<title> Notes App</title>
+<!-- Bootstrap Style -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonym\
+ous">
+<script src="https://use.fontawesome.com/72ce767f24.js"></script>
+<script > window.onload = function () {
+
+
+var options = {
+  title: {
+  text: "Column Chart in jQuery CanvasJS"              
+  },
+  data: [              
+  {
+  // Change type to "doughnut", "line", "splineArea", etc.
+  type: "column",
+  dataPoints: [
+  { label: "apple",  y: 10  },
+  { label: "orange", y: 15  },
+  { label: "banana", y: 25  },
+  { label: "mango",  y: 30  },
+  { label: "grape",  y: 28  }
+  ]
+  }
+  ]
+};
+
+$("#chartContainer").CanvasJSChart(options);
+
+
+}
+</script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-theme {color:#fff !important;background-color:#4CAF50 !important}
+.w3-btn {background-color:#4CAF50;margin-bottom:4px}
+.w3-code{border-left:4px solid #4CAF50}
+#doc{float:left;background:#eee}
+#sidebar{float:right;}
+.test{display: inline-block;}
+</style>
+
+<!-- add the JQuery and newt.js to create a login bar-->
+<script src="https://newt.nersc.gov/js/jquery-1.7.2.js"></script>
+<script src="https://newt.nersc.gov/js/newt.js"></script>
+
+<!-- Script -->
+<script type="text/javascript">
+$.newt_ajax({url: "/login",
+             type: "GET",
+             success: function(res){
+                 // res is { username: 'xxxxx', auth: true|false }
+                if (!res.auth){
+                    $("#app").hide();
+                } else {$("#login_error").hide();}
+             },});
+$.getJSON('../.data/name_test.json', function(json) {
+                $.each(parseJSON(json), function(i,item) {
+                      $('#sidebar-container').append('<a class="w3-bar-item w3-button">'+alert(item.name)+"</a>");
+                    });
+
+               });
+</script>
+
+</head>
+
+<!-- Webpage Body -->
+<body class="bg-ac">
+
+<div id="app">
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light w3-animate-top">
+<a class="navbar-brand" href="/"><b class=MVP>MVP@LBNL: </b><b class=Medical Note>Medical Note Viewer |</b></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item ">
+<a class="nav-link" href="/user/home/">Home</a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="/user/home/">FAQs</a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="/user/home/">About</a>
+</li>
+</ul>
+
+<form action="/search/" method="POST" class="form-inline my-2 my-lg-0" >
+<input class="form-control mr-sm-2" name ="search_string" type="search" value="Subject ID; HADM ID..." aria-label= "Search">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+</div>
+
+</nav>
+<!-- END OF NAV BAR -->
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light w3-animate-top">
+
+<form action="/search/" method="POST" class="form-inline my-2 my-lg-0" >
+<input class="form-control mr-lg-2" name ="search_string" type="search" value="Keywords" aria-label= "Search">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+</nav>
+<!-- END OF NAV BAR -->
+
+<div class="test">
+<div id="chartContainer" style="margin-left:500px;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-collapse w3-animate-right" style="z-index:0;width:400px", id='sidebar'>
+<div class="w3-container" id="sidebar-container">
+<h3>Feature List For Plots</h3>
+  </div>
+  <a class="w3-bar-item w3-button" href="">Opioid Analysis</a>
+  <a class="w3-bar-item w3-button" href="">Age Distribution</a>
+  <a class="w3-bar-item w3-button" href="">Timeline structure</a>
+  <a class="w3-bar-item w3-button" href="">Suicide Analysis</a>
+  <a class="w3-bar-item w3-button" href="">Related Suicide Problem</a>
+  <a class="w3-bar-item w3-button" href="">Religion Plots</a>
+  <a class="w3-bar-item w3-button" href="">More.........</a>
+  <a class="w3-bar-item w3-button" href="">More.........</a>
+  </div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="login_error">
+Please Login and Refresh Page.
+</div>
+
+</body>
+
+</html>
