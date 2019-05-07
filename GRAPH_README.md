@@ -10,7 +10,7 @@ var options = {
   },
   data: [
   {
-  type: "this is what you want to make this plot looks like(scatter, line, pie, chart)",
+  type: " 'this is what you want to make this plot looks like(scatter, line, pie, chart)' ",
   dataPoints: [label: "label title", y-axis:"" ]
   }
   ]
