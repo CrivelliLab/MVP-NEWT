@@ -1,4 +1,5 @@
 # GRAPH
+The simple code below
 
 ```javascript
 <script > window.onload = function () {
