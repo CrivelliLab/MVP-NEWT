@@ -1,6 +1,7 @@
 # GRAPH
-The simple code below is jquery library to write function for graph/plot.
+The simple code below is jquery library to write function for graph/plot and html to retrieve from the above function.
 
+Markup :  # function for graph #
 ```javascript
 <script > window.onload = function () {
 
@@ -26,6 +27,7 @@ $("#chartContainer").CanvasJSChart(options);
 
 The `option` function generate the basic function of graph, and in `type` you can insert `scatter`, `line`,`pie`,`chart`,`columns` to create different types of graph.
 
+Markup :  # Retrieve from that function  #
 ```
 <body>
 <div id="chartContainer" style="height: ...px; max-width: ...px; "></div>
