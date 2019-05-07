@@ -28,7 +28,7 @@ The `option` function generate the basic function of graph, and in `type` you ca
 
 ```
 <body>
-<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<div id="chartContainer" style="height: ...px; max-width: ...px; "></div>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
