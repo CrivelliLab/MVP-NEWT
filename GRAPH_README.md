@@ -1,5 +1,5 @@
 # GRAPH
-The simple code below
+The simple code below is jquery library to write function for graph/plot.
 
 ```javascript
 <script > window.onload = function () {
