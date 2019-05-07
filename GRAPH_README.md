@@ -25,3 +25,11 @@ $("#chartContainer").CanvasJSChart(options);
 ```
 
 The `option` function generate the basic function of graph, and in `type` you can insert `scatter`, `line`,`pie`,`chart`,`columns` to create different types of graph.
+
+```
+<body>
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+```
