@@ -35,5 +35,5 @@ The `option` function generate the basic function of graph, and in `type` you ca
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
 ```
-we create $("#chartContainer") for name the function so in html just call the var name in body.
+we create $("#chartContainer") for name of the function so in html just call the exisiting var name in function.
 
