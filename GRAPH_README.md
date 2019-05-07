@@ -24,4 +24,4 @@ $("#chartContainer").CanvasJSChart(options);
 </script>
 ```
 
-The `option` function generate the 
+The `option` function generate the basic function of graph, and in `type` you can insert `scatter`, `line`,`pie`,`chart`.
